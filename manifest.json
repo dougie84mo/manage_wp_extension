@@ -1,0 +1,21 @@
+{
+  "name": "Manage WP User Extension",
+  "version": "0.1.0",
+  "description": "Manage WP Extension that allows us to add multiple users.",
+  "permissions": ["storage", "tabs"],
+  "host_permissions": ["https://orion.managewp.com/dashboard/sites/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://orion.managewp.com/dashboard/sites"],
+      "js": ["mainController.js"]
+    }
+  ],
+  "action": {
+    "default_title": "MWP Users",
+    "default_popup": "app.html"
+  },
+  "manifest_version": 3
+}
